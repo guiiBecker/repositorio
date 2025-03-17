@@ -33,13 +33,17 @@ export default function Terminal() {
         setInput("");
         return;
       case "contactme":
-        window.location.href = "mailto:guilhermegbecker@gmail.com";
+        response = "Send an email to me!";
+        setOutput((prev) => [...prev, `$ ${cleanCommand}`, response]);
+        setTimeout(() => {
+          window.location.href = "mailto:guilhermegbecker@gmail.com";
+        }, 10);
         return;
       case "linkedin":
         window.open("https://www.linkedin.com/in/guilherme-gottschefski-becker/", "_blank");
         return;
       case "github":
-        window.open("https://github.com/guiiBecker", "_blank");
+        window.open("https://github.com/guiiBecker", "_blank");  
         return;      
       case "projects":
         window.open("/projects");
