@@ -37,6 +37,9 @@ export default function Terminal() {
         return;
       case "github":
         window.open("https://github.com/guiiBecker", "_blank");
+        return;      
+      case "projects":
+        window.open("/projects");
         return;
       default:
         response = `Comando não reconhecido: ${command}`;

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-export default function Contatos() {
+export default function Projects() {
   return (
     <main>
       <div>
-        <p>Contatos page</p>
+        <p>projects page</p>
       </div>
     </main>
   );
