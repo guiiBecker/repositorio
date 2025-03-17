@@ -26,7 +26,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="bg-blue-600 text-white p-4 flex items-center justify-between">
+    <header className=" p-4 flex items-center justify-between">
       {/* Botão do Menu */}
       <button
         className="p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
@@ -38,8 +38,8 @@ export default function Header() {
       {/* Espaço flexível para empurrar o título para a direita */}
       <div className="flex-1"></div>
 
-      {/* Logo ou título alinhado à direita */}
-      <h1 className="text-lg font-bold">Meu Site</h1>
+      {/* Título como link */}
+      <a href="#" className="text-lg font-bold hover:underline">Contact me</a>
 
       {/* Menu deslizante */}
       <AnimatePresence>
@@ -50,7 +50,7 @@ export default function Header() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -200, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-12 left-4 w-48 bg-white text-black shadow-lg p-4 rounded-lg"
+            className="absolute top-12 left-4 w-48 bg-white shadow-lg p-4 rounded-lg"
           >
             <ul className="space-y-2">
               <li>
