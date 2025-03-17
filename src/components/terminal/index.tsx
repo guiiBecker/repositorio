@@ -10,12 +10,20 @@ export default function Terminal() {
   const router = useRouter();
 
   const handleCommand = (command: string) => {
-    if (!command.trim()) return;
-    
-    let response;
+    const cleanCommand = command.trim().toLowerCase();
+    if (!cleanCommand) return;
+    let response = '';
     switch (command.toLowerCase()) {
       case "help":
-        response = "Available commands: help, whoami, contactme, programming, linkedin, github, clear";
+        response = [
+          "Available commands:",  
+          "- whoami", "- contactme", 
+          "- programming", 
+          "- linkedin", 
+          "- github",
+          "- resume",
+          "- clear"
+        ];
         setHelpUsed(true);
         break;
       case "whoami":
@@ -41,11 +49,22 @@ export default function Terminal() {
       case "projects":
         window.open("/projects");
         return;
+        case "resume":
+          response = "Opening documents...";
+          setOutput((prev) => prev.filter(line => line !== "Type 'help' for a list of commands."));
+          setOutput((prev) => [...prev, `$ ${cleanCommand}`, response]);
+          setTimeout(() => {
+            window.open("/resume.pdf", "_blank", "noopener,noreferrer");
+            setOutput((prev) => [...prev, "Done"]);
+          }, 1000);
+          return;
       default:
-        response = `Comando não reconhecido: ${command}`;
+        response = `Command not found: ${command}`;
     }
 
-    setOutput((prev) => helpUsed ? [...prev, `$ ${command}`, response] : [...prev.slice(1), `$ ${command}`, response]);
+
+    setOutput((prev) => prev.filter(line => line !== "Type 'help' for a list of commands."));
+    setOutput((prev) => [...prev, `$ ${cleanCommand}`, ...response]);
     setInput("");
   };
 
