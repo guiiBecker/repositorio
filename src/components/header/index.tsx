@@ -1,11 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Fecha o menu ao clicar fora dele
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <header className="bg-blue-600 text-white p-4 flex items-center justify-between">
@@ -17,23 +35,24 @@ export default function Header() {
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Logo ou título */}
-      <h1 className="text-lg font-bold">Meu Site</h1>
+      {/* Espaço flexível para empurrar o título para a direita */}
+      <div className="flex-1"></div>
 
-      {/* Espaço para algum conteúdo no lado direito */}
-      <div></div>
+      {/* Logo ou título alinhado à direita */}
+      <h1 className="text-lg font-bold">Meu Site</h1>
 
       {/* Menu deslizante */}
       <AnimatePresence>
         {isOpen && (
           <motion.nav
+            ref={menuRef}
             initial={{ x: -200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -200, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-0 left-0 h-screen w-60 bg-white text-black shadow-lg p-4"
+            className="absolute top-12 left-4 w-48 bg-white text-black shadow-lg p-4 rounded-lg"
           >
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               <li>
                 <a href="#" className="block p-2 hover:bg-gray-200 rounded">Home</a>
               </li>
