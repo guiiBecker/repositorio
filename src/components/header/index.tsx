@@ -54,7 +54,7 @@ export default function Header() {
           >
             <ul className="space-y-2">
               <li>
-                <a href="#" className="block p-2 hover:bg-gray-200 rounded">Home</a>
+                <a href="/" className="block p-2 hover:bg-gray-200 rounded">Home</a>
               </li>
               <li>
                 <a href="#" className="block p-2 hover:bg-gray-200 rounded">Sobre</a>
@@ -63,7 +63,7 @@ export default function Header() {
                 <a href="#" className="block p-2 hover:bg-gray-200 rounded">Serviços</a>
               </li>
               <li>
-                <a href="#" className="block p-2 hover:bg-gray-200 rounded">Contato</a>
+                <a href="contatos" className="block p-2 hover:bg-gray-200 rounded">Contato</a>
               </li>
             </ul>
           </motion.nav>
