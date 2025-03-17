@@ -10,20 +10,15 @@ export default function Terminal() {
   const router = useRouter();
 
   const handleCommand = (command: string) => {
-    const cleanCommand = command.trim().toLowerCase();
+    const cleanCommand = command.replace(/[^a-zA-Z0-9]/g, "").trim().toLowerCase();
     if (!cleanCommand) return;
+
     let response = '';
     switch (command.toLowerCase()) {
       case "help":
-        response = [
-          "Available commands:",  
-          "- whoami", "- contactme", 
-          "- programming", 
-          "- linkedin", 
-          "- github",
-          "- resume",
-          "- clear"
-        ];
+        response = 
+          "Available commands: whoami, contactme, programming, linkedin, github, resume, clear"
+        ;
         setHelpUsed(true);
         break;
       case "whoami":
@@ -64,7 +59,7 @@ export default function Terminal() {
 
 
     setOutput((prev) => prev.filter(line => line !== "Type 'help' for a list of commands."));
-    setOutput((prev) => [...prev, `$ ${cleanCommand}`, ...response]);
+    setOutput((prev) => [...prev, `$ ${cleanCommand}`, response]);
     setInput("");
   };
 
