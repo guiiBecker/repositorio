@@ -16,7 +16,7 @@ export default function MainTitle() {
   
         {/* Descrição */}
         <p className="text-lg text-gray-600 mt-2">
-          Backend Developer | TypeScript | Computer Science
+          FullStack Developer | TypeScript | Computer Science
         </p>
       </main>
     );
