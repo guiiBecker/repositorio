@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Terminal Portfolio
 
-## Getting Started
+Um portfólio interativo no estilo terminal onde os visitantes podem digitar comandos para descobrir informações sobre mim, meus projetos e habilidades.
 
-First, run the development server:
+## 🚀 Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15** - Framework React com renderização do lado do servidor
+- **React 19** - Biblioteca para construção de interfaces
+- **TypeScript** - Superset tipado de JavaScript
+- **Tailwind CSS 4** - Framework CSS utilitário
+- **Framer Motion** - Para animações fluidas
+
+## ⌨️ Funcionamento
+
+Este portfólio simula um terminal de linha de comando, onde os visitantes podem interagir digitando comandos específicos para descobrir informações sobre mim:
+
+### Comandos Disponíveis
+
+| Comando | Descrição |
+|---------|-----------|
+| `help` | Mostra a lista de comandos disponíveis |
+| `whoami` | Exibe informações sobre mim como desenvolvedor |
+| `contactme` | Abre o cliente de email para entrar em contato comigo |
+| `programming` | Lista minhas principais linguagens de programação |
+| `linkedin` | Redireciona para meu perfil do LinkedIn |
+| `github` | Redireciona para meu perfil do GitHub |
+| `projects` | Navega para a página de projetos |
+| `resume` | Abre meu currículo em PDF |
+| `clear` | Limpa o terminal |
+
+## 📋 Estrutura do Projeto
+
+```
+├── src/
+│   ├── app/               # Diretório raiz da aplicação Next.js
+│   │   ├── projects/      # Rota para a página de projetos
+│   │   ├── globals.css    # Estilos globais
+│   │   ├── layout.tsx     # Layout principal da aplicação
+│   │   └── page.tsx       # Página inicial
+│   ├── assets/            # Recursos estáticos como imagens
+│   ├── components/        # Componentes React reutilizáveis
+│   │   ├── header/        # Componente de cabeçalho
+│   │   ├── layoutWrapper/ # Wrapper para layout condicional
+│   │   ├── terminal/      # Componente principal do terminal
+│   │   └── title/         # Componente para o título da página
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Instalação e Uso
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/terminal-portfolio.git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Navegue até o diretório do projeto
+cd terminal-portfolio
 
-## Learn More
+# Instale as dependências
+npm install
+# ou
+yarn install
 
-To learn more about Next.js, take a look at the following resources:
+# Execute em modo de desenvolvimento
+npm run dev
+# ou
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A aplicação estará disponível em `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Recursos Adicionais
 
-## Deploy on Vercel
+- Responsive design para funcionar em dispositivos móveis e desktop
+- Interface minimalista inspirada em terminais Unix/Linux
+- Navegação entre páginas integrada com Next.js
+- Estilização moderna com Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📞 Contato
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Email**: guilhermegbecker@gmail.com
+- **LinkedIn**: [Guilherme Gottschefski Becker](https://www.linkedin.com/in/guilherme-gottschefski-becker/)
+- **GitHub**: [guiiBecker](https://github.com/guiiBecker)
+
+## 📸 Preview do Projeto
+
+![Preview do Portfólio](./src/assets/fotoporti.png)
