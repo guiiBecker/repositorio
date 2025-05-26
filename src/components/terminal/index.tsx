@@ -17,7 +17,7 @@ export default function Terminal() {
     switch (command.toLowerCase()) {
       case "help":
         response = 
-          "Available commands: whoami, contactme, programming, linkedin, github, resume, clear"
+          "Available commands: whoami, contactme, programming, projects, linkedin, github, resume, clear"
         ;
         setHelpUsed(true);
         break;
