@@ -46,7 +46,7 @@ export default function Terminal() {
         window.open("https://github.com/guiiBecker", "_blank");  
         return;      
       case "projects":
-        window.open("/projects");
+        window.open("https://projeto-magui.vercel.app", "_blank");
         return;
         case "resume":
           response = "Opening documents...";

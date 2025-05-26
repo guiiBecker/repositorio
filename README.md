@@ -67,12 +67,6 @@ yarn dev
 
 A aplicação estará disponível em `http://localhost:3000`
 
-## 🌐 Recursos Adicionais
-
-- Responsive design para funcionar em dispositivos móveis e desktop
-- Interface minimalista inspirada em terminais Unix/Linux
-- Navegação entre páginas integrada com Next.js
-- Estilização moderna com Tailwind CSS
 
 ## 📞 Contato
 
